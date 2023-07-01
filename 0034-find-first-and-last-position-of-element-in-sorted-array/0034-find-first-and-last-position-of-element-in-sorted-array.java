@@ -9,6 +9,15 @@ class Solution {
         return ans;
     }
 
+    public int countOccurences(int[] nums, int target) {
+        int start = lowerBound(nums, target);
+        int end = upperBound(nums, target);
+
+        return Math.abs(end - start);
+        // here end -> first element > target;
+        // start ->  first occurence of target
+    }
+
     public int lowerBound(int[] nums, int target) {
         int lo = 0, hi = nums.length-1;
 
