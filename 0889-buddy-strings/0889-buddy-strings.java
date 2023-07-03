@@ -3,10 +3,10 @@ class Solution {
         if(s.length() != goal.length()) return false;
 
         if(s.equals(goal)) {
-            HashMap<Character, Integer> mp = new HashMap<>();
+            HashSet<Character> hs = new HashSet<>();
             for(int i=0; i<s.length(); i++) {
-                if(mp.containsKey(s.charAt(i))) return true;
-                else mp.put(s.charAt(i), 1);
+                if(hs.contains(s.charAt(i))) return true;
+                else hs.add(s.charAt(i));
             }
             return false;
         }
